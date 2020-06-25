@@ -1,0 +1,60 @@
+.carousel {
+	.slick-arrow {
+		z-index: 1;
+		width: initial;
+		height: initial;
+
+		&::before {
+			font-family: "Font Awesome 5 Free";
+			font-weight: 900;
+			font-size: 17px;
+			background-color: $primary;
+			color: #111;
+			padding: 10px;
+			border-radius: 30px;
+			width: 13px;
+			height: 13px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		&.slick-prev {
+			// left: 0;
+
+			&::before {
+				content: "\f053";
+			}
+		}
+		&.slick-next {
+			// right: 0;
+
+			&::before {
+				content: "\f054";
+			}
+		}
+	}
+
+	.slick-dots {
+		button::before {
+			font-size: 18px;
+			color: #fff;
+		}
+	}
+}
+
+@media screen and (max-width: 610px) {
+	.carousel {
+		margin-bottom: 90px !important;
+
+		.slick-arrow {
+			&.slick-prev {
+				left: 30%;
+				top: calc(100% + 40px);
+			}
+			&.slick-next {
+				right: 30%;
+				top: calc(100% + 40px);
+			}
+		}
+	}
+}

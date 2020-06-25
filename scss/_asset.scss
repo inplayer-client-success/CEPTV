@@ -1,0 +1,106 @@
+.asset {
+  .inplayer-preview-box {
+    padding: 0;
+    background: none;
+    border: none;
+
+    .inplayer-imageholder {
+      // padding-bottom: 44.25%;
+      // box-shadow: 0 0 13px 0px rgba(0, 0, 0, 0.144);
+
+      // &::after {
+      //   content: "";
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   width: 100%;
+      //   height: 100%;
+      //   background: rgba(0, 0, 0, 0.6);
+      // }
+      .inplayer-paywallexplain {
+        display: none;
+      }
+    }
+
+    .inplayer-itemdetails {
+      // position: absolute;
+      // color: #fff;
+      // top: calc(50% - 60px);
+      // left: 50%;
+      // transform: translate(-50%, -50%);
+      // width: 54%;
+
+      .inplayer-title {
+        h1,
+        h2,
+        h3,
+        p {
+          // color: #fff;
+          font-family: $font;
+          font-weight: 600;
+          text-align: left;
+          font-size: 1.5em;
+          line-height: 1.3;
+        }
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        text-align: left;
+        font-weight: 400;
+      }
+    } // itemdetails
+
+    .inplayer-buybutton {
+      // width: 100%;
+
+      button {
+        margin: 0;
+        font-family: $font;
+      }
+    }
+
+    .inplayer-preview-footer {
+      margin-top: 0;
+      border: none;
+      a {
+        color: #2f2f2f;
+      }
+    }
+  } // inplayer preview box
+
+  @media screen and (max-width: 700px) {
+    .inplayer-preview-box {
+      // background: #fff;
+
+      .inplayer-itemdetails {
+        transform: initial;
+        position: initial;
+        color: #222;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 4%;
+
+        .inplayer-title {
+          h1,
+          h2,
+          h3,
+          p {
+            color: #222;
+          }
+        }
+      }
+
+      .inplayer-buybutton {
+        position: initial;
+        width: 100%;
+        // max-width: 200px;
+        padding: 0 4%;
+        display: block;
+        margin: 5px auto;
+      }
+    }
+  }
+} // asset
