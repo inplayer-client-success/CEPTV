@@ -368,10 +368,15 @@ h4 {
   display: none;
 }
 
+.asset .inplayer-preview-box .inplayer-itemdetails {
+  color: #fff;
+}
+
 .asset .inplayer-preview-box .inplayer-itemdetails .inplayer-title h1,
 .asset .inplayer-preview-box .inplayer-itemdetails .inplayer-title h2,
 .asset .inplayer-preview-box .inplayer-itemdetails .inplayer-title h3,
 .asset .inplayer-preview-box .inplayer-itemdetails .inplayer-title p {
+  color: #fff;
   font-family: "Gothic A1", sans-serif;
   font-weight: 600;
   text-align: left;
@@ -406,17 +411,10 @@ h4 {
     -webkit-transform: initial;
             transform: initial;
     position: initial;
-    color: #222;
     width: 100%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     padding: 0 4%;
-  }
-  .asset .inplayer-preview-box .inplayer-itemdetails .inplayer-title h1,
-  .asset .inplayer-preview-box .inplayer-itemdetails .inplayer-title h2,
-  .asset .inplayer-preview-box .inplayer-itemdetails .inplayer-title h3,
-  .asset .inplayer-preview-box .inplayer-itemdetails .inplayer-title p {
-    color: #222;
   }
   .asset .inplayer-preview-box .inplayer-buybutton {
     position: initial;
@@ -437,8 +435,9 @@ h4 {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   font-size: 17px;
-  background-color: #FFAA55;
-  color: #111;
+  background-color: #152A3F;
+  opacity: 1;
+  color: #fff;
   padding: 10px;
   border-radius: 30px;
   width: 13px;
@@ -464,7 +463,7 @@ h4 {
 
 .carousel .slick-dots button::before {
   font-size: 18px;
-  color: #fff;
+  color: #152A3F;
 }
 
 @media screen and (max-width: 610px) {
@@ -646,26 +645,16 @@ body {
 
 #header {
   position: relative;
-  background: url("../img/header.jpg");
-  background-attachment: fixed;
-  background-position: top;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
   min-height: 50vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+}
+
+#header img {
+  width: 100%;
+  height: 100%;
 }
 
 #header.item-header {
-  background: #e9e9e9;
+  background: #152A3F;
 }
 
 #header.home-page::after {
@@ -751,9 +740,8 @@ body {
   }
 }
 
-.package-container {
-  background: #222;
-  color: #fff !important;
+.package-container h1, .package-container h2, .package-container h3, .package-container p {
+  color: #111111 !important;
 }
 
 #footer {

@@ -8,8 +8,9 @@
 			font-family: "Font Awesome 5 Free";
 			font-weight: 900;
 			font-size: 17px;
-			background-color: $primary;
-			color: #111;
+			background-color: $secondary;
+			opacity: 1;
+			color: #fff;
 			padding: 10px;
 			border-radius: 30px;
 			width: 13px;
@@ -37,7 +38,7 @@
 	.slick-dots {
 		button::before {
 			font-size: 18px;
-			color: #fff;
+			color: $secondary;
 		}
 	}
 }
