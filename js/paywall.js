@@ -8,7 +8,7 @@ function getParameterByName(name, url) {
 	return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 var config_ip = {
-	packages: [105986, 105987, 105988],
+	packages: [105986, 105987, 105988, 109509],
 	service_url: "https://services.inplayer.com",
 };
 
