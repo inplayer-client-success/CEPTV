@@ -310,3 +310,19 @@ body {
 		}
 	}
 }
+
+.sponsors {
+    display: flex;
+    background: #fff;
+    width: 100%;
+    padding: 20px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+	align-items: center;
+	
+	img {
+		width: 100%;
+		max-width: 130px;
+		margin: 10px 20px;
+	}
+}
