@@ -17,10 +17,6 @@ var paywall = new InplayerPaywall("3da670ca-d4c8-4c57-8511-c5c90562fc27", [
 		id: getParameterByName("id"),
 	},
 ]);
-// {
-//   oauthAppKey: '17c128af636af78c894d217a783c07dc',
-//   brandingId: 823
-// });
 
 $(".inplayer-paywall-logout").parent().hide();
 paywall.on("authenticated", function () {
