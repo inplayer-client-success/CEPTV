@@ -11,44 +11,47 @@ var config_ip = {
 	packages: [105986, 105987, 105988, 109509],
 	service_url: "https://services.inplayer.com",
 };
-
-var paywall = new InplayerPaywall("3da670ca-d4c8-4c57-8511-c5c90562fc27", [
-	{
-		id: getParameterByName("id"),
-	},
-]);
-
-$(".inplayer-paywall-logout").parent().hide();
-paywall.on("authenticated", function () {
-	$(".inplayer-paywall-login").parent().hide();
-	$(".inplayer-paywall-logout").parent().show();
-});
-
-paywall.on("logout", function () {
-	location.reload();
-});
-
-function createItemElement(assetId, assetPhoto, assetTitle) {
-	var output =
-		'<div class="package-item"><div class="content" style="background-image:url(' +
-		assetPhoto +
-		')">';
-	output +=
-		'<a href="./item.html?id=' +
-		assetId +
-		'" class="overlay-link"></a></div><div class="item-label"><div class="name">';
-	output += assetTitle;
-	output += "</div>";
-	output += "</div></div>";
-	return output;
-}
-
 $(function () {
-	$("#preview-item").html(
-		'<div id="inplayer-' +
-			getParameterByName("id") +
-			'" class="inplayer-paywall"></div>'
-	);
+	function createItemElement(assetId, assetPhoto, assetTitle) {
+		var output =
+			'<div class="package-item"><div class="content" style="background-image:url(' +
+			assetPhoto +
+			')">';
+		output +=
+			'<a href="./item.html?id=' +
+			assetId +
+			'" class="overlay-link"></a></div><div class="item-label"><div class="name">';
+		output += assetTitle;
+		output += "</div>";
+		output += "</div></div>";
+		return output;
+	}
+
+	var paywall = new InplayerPaywall("3da670ca-d4c8-4c57-8511-c5c90562fc27", []);
+	 
+	 setTimeout(function () {
+		if (getParameterByName("id")) {
+			$("#preview-item").html(
+				'<div id="inplayer-' +
+					getParameterByName("id") +
+				'" class="inplayer-paywall"></div>'
+			);
+			
+			var paywall = new InplayerPaywall("3da670ca-d4c8-4c57-8511-c5c90562fc27", [
+				{
+					id: getParameterByName("id"),
+				},
+			]);
+		}
+	 }, 300);
+	
+	
+
+	$(".inplayer-paywall-login").click(function () {
+		paywall.showPaywall({
+			asset: {}
+		});
+	});
 
 	$(".inplayer-paywall-logout").parent().hide();
 
@@ -69,9 +72,9 @@ $(function () {
 			$("#title-" + package).html(packageTitle);
 			$.get(
 				config_ip.service_url +
-					"/items/packages/" +
-					package +
-					"/items?limit=500",
+				"/items/packages/" +
+				package +
+				"/items?limit=500",
 				(response) => {
 					var output = "";
 					packageNumber++;
